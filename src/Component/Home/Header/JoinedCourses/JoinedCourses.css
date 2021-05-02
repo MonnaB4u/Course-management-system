@@ -1,0 +1,36 @@
+/* .card1{
+  width: 18rem;
+  display: inline-block;
+} */
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cards{
+  /* color: white; */
+  float: left;
+  width: calc(25% - 20px);
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 2px 2px 3px 1px rgb(126, 199, 236);
+  background: linear-gradient(to bottom, rgb(231, 192, 192) 0%,black 50%,#000000 50%,rgb(194, 184, 184) 50%,white 100%);
+}
+.cards p {
+  font-size: 18px;
+}
+.cardContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* @media screen and (max-width: 600px) {
+  .card {
+     width: 100%;
+  }
+} */
+
+.yac{
+  font-family: 'georgia';
+  color: white;
+}
