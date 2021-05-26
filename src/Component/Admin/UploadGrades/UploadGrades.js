@@ -1,20 +1,17 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-
-const UploadSyllabusMain = () => {
+const UploadGrades = () => {
 
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/addSyllabus', {
+        fetch('http://localhost:5000/addGrades', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
-        })
-            
-            .then(success => {
+        }).then(success => {
                 if (success) {
                     alert("Uploaded successfully");
                 }
@@ -27,19 +24,28 @@ const UploadSyllabusMain = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
 
-            <div className="form-group">
-                        <input type="text" {...register('day', { required: true })} name="day" placeholder="input day" className="form-control" />
-                       
-                    </div>
-                    
+                <div className="form-group">
+                    <input type="text" {...register('assignmentNumber', { required: true })} name="assignmentNumber" placeholder="input Assignment Number" className="form-control" />
+
+                </div>
 
                 <div className="form-group">
-                    <textarea name="Description" placeholder="Please input your syllabus plan" name="syllabusPlan" className="form-control" id="exampleFormControlTextarea1" {...register('syllabusPlan', { required: true })} rows="3"></textarea>
+                    <input type="number" {...register('grades', { required: true })} name="grades" placeholder="input Gardes" className="form-control" />
+
                 </div>
+
+                <div className="form-group">
+                    <input type="number" {...register('OutOfGrade', { required: true })} name="OutOfGrade" placeholder="input Out Of Gardes" className="form-control" />
+
+                </div>
+
+
+
 
                 <div className="form-group text-centet ml-0 mt-5">
                     <button type="submit" class="btn btn-warning">Send</button>
                 </div>
+                
             </form>
 
 
@@ -47,4 +53,4 @@ const UploadSyllabusMain = () => {
     );
 };
 
-export default UploadSyllabusMain;
+export default UploadGrades;

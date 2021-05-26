@@ -1,14 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-
-const UploadSyllabusMain = () => {
+const AddNotification = () => {
 
     const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = data => {
 
-        fetch('http://localhost:5000/addSyllabus', {
+        fetch('http://localhost:5000/addNotification', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -28,13 +27,13 @@ const UploadSyllabusMain = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
 
             <div className="form-group">
-                        <input type="text" {...register('day', { required: true })} name="day" placeholder="input day" className="form-control" />
+                        <input type="text" {...register('name', { required: true })} name="name" placeholder="Teachers Name" className="form-control" />
                        
                     </div>
                     
 
                 <div className="form-group">
-                    <textarea name="Description" placeholder="Please input your syllabus plan" name="syllabusPlan" className="form-control" id="exampleFormControlTextarea1" {...register('syllabusPlan', { required: true })} rows="3"></textarea>
+                    <textarea name="Description" placeholder="Please input your Message" name="message" className="form-control" id="exampleFormControlTextarea1" {...register('message', { required: true })} rows="3"></textarea>
                 </div>
 
                 <div className="form-group text-centet ml-0 mt-5">
@@ -47,4 +46,4 @@ const UploadSyllabusMain = () => {
     );
 };
 
-export default UploadSyllabusMain;
+export default AddNotification;

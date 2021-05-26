@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-const GradeMain = () => {
+const Assignment = () => {
+
     const [Data, setData] = useState([])
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/Gradeeall')
+        fetch('http://localhost:5000/allAssignments')
             .then(res => res.json())
             .then(data => setData(data))
 
@@ -15,14 +16,13 @@ const GradeMain = () => {
         <div>
 
 
-            <li class="list-group-item active" aria-current="true" > Grade This Week</li>
+            <li class="list-group-item active" aria-current="true" > Assignment for This Week</li>
 
             {
                 Data.map((each, index) =>
                     <>
-                        <ul class="list-group">
-                            
-                            <li class="list-group-item" aria-current="true"> {each.assignmentNumber} you got {each.grades} out of {each.OutOfGrade} </li>
+                         <ul class="list-group">
+                            <li class="list-group-item" aria-current="true">{each.ChapterName} :------ {each.assignmentPlan} </li>
 
                         </ul>
 
@@ -35,4 +35,4 @@ const GradeMain = () => {
     );
 };
 
-export default GradeMain;
+export default Assignment;

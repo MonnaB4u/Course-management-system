@@ -33,8 +33,17 @@ const DashBoard = () => {
                     }
                         class="nav-link "
                         aria-current="page"
+                        href="/assignment">Check Your Assignment</a>
+                </li>
+                <li class="nav-item nav">
+                    <a style={
+                        { color: 'black' }
+                    }
+                        class="nav-link "
+                        aria-current="page"
                         href="/subAssign">Submit Assignment</a>
                 </li>
+
                 <li class="nav-item nav">
                     <a style={
                         { color: 'black' }
